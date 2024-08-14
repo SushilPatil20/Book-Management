@@ -1,6 +1,7 @@
 import Book from "./Book";
 import { Books } from "../utils/bookData";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const BookList = () => {
   const [search, setSearch] = useState("");
@@ -34,7 +35,11 @@ const BookList = () => {
       </section>
       <ul className="grid grid-cols-1 md:grid-cols-3 space-4 px-6">
         {filteredBooks.length !== 0 ? (
-          filteredBooks.map((book) => <Book key={book.id} book={book} />)
+          filteredBooks.map((book) => (
+            <Link to={`/book/${book.id}`}>
+              <Book key={book.id} book={book} />
+            </Link>
+          ))
         ) : (
           <h2 className="text-center text-2xl text-gray-700">
             Search not found..!!
