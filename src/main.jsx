@@ -8,6 +8,7 @@ import Contact from "./components/Contact.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import BookList from "./components/BookList.jsx";
 import BookDetails from "./components/BookDetails.jsx";
+import Demo from "./components/Demo.jsx";
 
 // Create Routing Configuration
 const appRouter = createBrowserRouter([
@@ -30,6 +31,10 @@ const appRouter = createBrowserRouter([
       {
         path: "book/:id",
         element: <BookDetails />,
+      },
+      {
+        path: "/demo",
+        element: <Demo />,
       },
     ],
     errorElement: <Error />,

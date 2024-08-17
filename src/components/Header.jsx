@@ -13,6 +13,9 @@ const Header = () => {
         <Link to="/contact">
           <li className="text-xl text-blue-600 hover:underline">Contact</li>
         </Link>
+        <Link to="/demo">
+          <li className="text-xl text-blue-600 hover:underline">Demo</li>
+        </Link>
       </ul>
     </header>
   );
