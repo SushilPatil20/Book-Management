@@ -1,6 +1,9 @@
 import React from "react";
+import userContext from "../utils/userContext";
+import { useContext } from "react";
 
 const Book = ({ book }) => {
+  const data = useContext(userContext);
   return (
     <>
       <li
@@ -20,6 +23,7 @@ const Book = ({ book }) => {
               <p className="text-gray-900 leading-none">{book.author}</p>
               <p className="text-gray-600">{book.publishedDate}</p>
             </div>
+            <p>{data}</p>
           </div>
         </div>
       </li>
