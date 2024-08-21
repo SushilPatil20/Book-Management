@@ -19,7 +19,7 @@ const Header = () => {
         <Link to="/demo">
           <li className="text-xl text-blue-600 hover:underline">Demo</li>
         </Link>
-        <li>{data}</li>
+        <li>{data.loggedInUser}</li>
       </ul>
     </header>
   );

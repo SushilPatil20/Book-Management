@@ -1,9 +1,11 @@
 import Book from "./Book";
 import { Books } from "../utils/bookData";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-
+import userContext from "../utils/userContext";
 const BookList = () => {
+  const { loggedInUser, setUserName } = useContext(userContext);
+
   const [search, setSearch] = useState("");
   const [filteredBooks, setFilteredBooks] = useState(Books);
 
@@ -17,6 +19,12 @@ const BookList = () => {
   return (
     <>
       <section className="text-center px-8 md:w-1/2 md:mx-auto md:px-0">
+        <input
+          type="text"
+          className="border border-gray-400 outline-none"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
         <h2 className="text-4xl my-8">Search Books</h2>
         <section className="flex flex-col space-y-4 md:flex-row mb-8 md:space-x-8 md:items-center md:space-y-0">
           <input

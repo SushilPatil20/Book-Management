@@ -23,7 +23,7 @@ const Book = ({ book }) => {
               <p className="text-gray-900 leading-none">{book.author}</p>
               <p className="text-gray-600">{book.publishedDate}</p>
             </div>
-            <p>{data}</p>
+            <p>{data.loggedInUser}</p>
           </div>
         </div>
       </li>
